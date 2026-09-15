@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">islamic App</string>
+    <string name="home">HOME</string>
+    <string name="quran">QURAN</string>
+    <string name="tsbe7">tsbe7</string>
+    <string name="radio">radio</string>
+    <string name="ahades">ahades</string>
+    <string name="prayer">PRAYER</string>
+</resources>
