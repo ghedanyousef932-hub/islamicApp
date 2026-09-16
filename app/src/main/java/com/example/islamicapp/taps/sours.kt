@@ -26,6 +26,7 @@ class SuraActivity : AppCompatActivity() {
 
     }
 
+
     private fun loadSouraText(fileNumber: Int): String {
         return try {
             assets.open("Suras/$fileNumber.txt")
@@ -35,6 +36,7 @@ class SuraActivity : AppCompatActivity() {
             ""
         }
     }
+
 
     companion object {
         const val EXTRA_CHAPTER_INDEX = "chapter_index"
