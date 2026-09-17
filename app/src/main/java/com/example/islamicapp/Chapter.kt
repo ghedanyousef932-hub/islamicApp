@@ -1,5 +1,6 @@
 package com.example.islamicapp
 
+
 data class Chapter(
     val titleEn: String,
     val titleAr: String,

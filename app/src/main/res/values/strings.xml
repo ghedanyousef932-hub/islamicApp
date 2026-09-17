@@ -9,4 +9,5 @@
     <string name="prayer">PRAYER</string>
     <string name="hadeeth_title">الحديث الأول</string>
     <string name="hadeeth_content"></string>
+    <string name="back">رجوع</string>
 </resources>

@@ -5,9 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.islamicapp.databinding.AhadesBinding
 
-class HadesAdaptor(
-    private val hadeethList: List<Hadeeth>
-) : RecyclerView.Adapter<HadesAdaptor.ViewHolder>() {
+class HadesAdaptor(val hadeethList: List<Hadeeth>) : RecyclerView.Adapter<HadesAdaptor.ViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -27,7 +25,6 @@ class HadesAdaptor(
         holder: ViewHolder,
         position: Int
     ) {
-
         val hadeeth = hadeethList[position]
 
         holder.binding.title.text = hadeeth.title
@@ -38,7 +35,5 @@ class HadesAdaptor(
         return hadeethList.size
     }
 
-    class ViewHolder(
-        val binding: AhadesBinding
-    ) : RecyclerView.ViewHolder(binding.root)
+    class ViewHolder(val binding: AhadesBinding) : RecyclerView.ViewHolder(binding.root)
 }

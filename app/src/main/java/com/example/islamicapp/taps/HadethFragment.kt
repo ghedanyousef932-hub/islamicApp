@@ -1,14 +1,19 @@
 package com.example.islamicapp.taps
 
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.viewpager2.widget.ViewPager2
 import com.example.islamicapp.Hadeeth
-import com.example.islamicapp.HadesPagerAdaptor
+import com.example.islamicapp.HadesAdaptor
+import com.example.islamicapp.MainActivity
+import com.example.islamicapp.R
 import com.example.islamicapp.databinding.FragmentHadethBinding
+import com.google.android.material.carousel.CarouselLayoutManager
+import com.google.android.material.carousel.CarouselSnapHelper
+import com.google.android.material.carousel.HeroCarouselStrategy
 
 class HadethFragment : Fragment() {
 
@@ -26,21 +31,36 @@ class HadethFragment : Fragment() {
         return binding.root
     }
 
-    private lateinit var adapters: HadesPagerAdaptor
-
+     lateinit var adapters: HadesAdaptor
+         var layoutManager = CarouselLayoutManager()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapters = HadesPagerAdaptor(loadHadethList())
 
-        binding.hadethPager.offscreenPageLimit = 3
-        binding.hadethPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-        binding.hadethPager.adapter = adapters
+        adapters = HadesAdaptor(loadHadethList())
+    layoutManager = CarouselLayoutManager(
 
-        // ابدأ من المنتصف ليتحرك يميناً ويساراً (دوران لا نهائي)
-        val middle = Int.MAX_VALUE / 2
-        binding.hadethPager.setCurrentItem(middle, false)
+        HeroCarouselStrategy(),
+                CarouselLayoutManager.HORIZONTAL,
+    )
+        layoutManager.carouselAlignment =CarouselLayoutManager.ALIGNMENT_CENTER
+
+        binding.hadethRecycler.adapter = adapters
+
+        binding.hadethRecycler.layoutManager = layoutManager
+
+        val snapHelper = CarouselSnapHelper()
+        snapHelper.attachToRecyclerView(binding.hadethRecycler)
+        binding.backArrow.setOnClickListener {
+            (activity as? MainActivity)?.binding?.bottomNavigation?.selectedItemId = R.id.quran
+        }
+        binding.hadethRecycler.addItemDecoration(
+            MarginItemDecoration(
+                6
+            )
+        )
     }
+
 
     private fun loadHadethList(): List<Hadeeth> {
 
@@ -55,6 +75,7 @@ class HadethFragment : Fragment() {
 
         return list
     }
+
 
     private fun loadHadeeth(fileNu: Int): Pair<String, String> {
 
@@ -91,4 +112,5 @@ class HadethFragment : Fragment() {
             Pair("", "")
         }
     }
+
 }
