@@ -7,4 +7,8 @@
     <string name="radio">radio</string>
     <string name="ahades">ahades</string>
     <string name="prayer">PRAYER</string>
+    <string name="counter_template">%1$d</string>
+    <string name="hadeeth_title">الحديث الأول</string>
+    <string name="hadeeth_content"></string>
+    <string name="back">رجوع</string>
 </resources>

@@ -15,7 +15,7 @@ import com.example.islamicapp.taps.TasbehFragment
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: HomeScreenBinding
+    lateinit var binding: HomeScreenBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
 

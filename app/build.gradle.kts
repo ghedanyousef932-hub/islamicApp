@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("kotlin-parcelize")
 }
 
 android {
@@ -47,6 +48,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.media3.extractor)
     implementation(libs.androidx.remote.creation.compose)
+    implementation(libs.generativeai)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
