@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/newConstraintLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/sebha_back">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
+
+    </ImageView>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="156dp"
+
+        android:background="@null"
+        android:src="@drawable/sebha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="الحمد لله"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:id="@+id/text1"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageButton"
+        app:layout_constraintEnd_toEndOf="@id/imageButton"
+        app:layout_constraintStart_toStartOf="@id/imageButton"
+        app:layout_constraintTop_toTopOf="@id/imageButton"
+
+        app:layout_constraintVertical_bias="0.596">
+
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:layout_marginTop="100dp"
+        android:id="@+id/text_num"
+
+        app:layout_constraintBottom_toBottomOf="@id/imageButton"
+        app:layout_constraintEnd_toEndOf="@id/imageButton"
+        app:layout_constraintStart_toStartOf="@id/imageButton"
+        app:layout_constraintTop_toTopOf="@id/imageButton"
+
+        app:layout_constraintVertical_bias="0.596">
+
+    </TextView>
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="625dp"
+        android:text="RESET"
+        android:textSize="20sp"
+        >
+    </Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
